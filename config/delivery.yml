@@ -31,10 +31,10 @@ spec:
           appliveview-sample/app-live-view-connector-boot
           appliveview-sample/app-live-view-appflavours-boot
           appliveview-sample/app-live-view-systemproperties
-        developer.apps.tanzu.vmware.com/image-source-digest: main/6462679d601dbae1a2afe61957a0c96ee3ef4530
+        developer.apps.tanzu.vmware.com/image-source-digest: main/3a8f9be41088faab5ad6e36575749a45e47bebd1
         developer.conventions/target-containers: workload
         services.conventions.apps.tanzu.vmware.com/mysql: mysql-connector-java/8.0.29
-        services.conventions.apps.tanzu.vmware.com/postgres: postgresql/42.3.6
+        services.conventions.apps.tanzu.vmware.com/postgres: postgresql/42.4.0
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: service-pet-clinic
@@ -53,7 +53,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.endpoint.health.show-details=always -Dmanagement.endpoints.web.base-path="/actuator" -Dmanagement.endpoints.web.exposure.include=* -Dmanagement.health.probes.enabled="true" -Dmanagement.server.port="8081" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: harbor.aws.tanzuapps.org/workloads/service-pet-clinic-demo@sha256:5b32ba87827d9b293a00fa27b32442898f2459773d35dcc5723cfc58e91ed0c1
+        image: harbor.aws.tanzuapps.org/workloads/service-pet-clinic-demo@sha256:2fab18d358f16912c9dca3a818861cca1843fdee47a1c291fe47acae513ce67d
         livenessProbe:
           httpGet:
             path: /livez
